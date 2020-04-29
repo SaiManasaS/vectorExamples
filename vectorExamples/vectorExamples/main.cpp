@@ -5,18 +5,33 @@
 
 using namespace std;
 
-vector<string> convertStrgToStrVect(string *inString)
+vector<string> convertStrgToStrVect(char *inString)
 {
-	int end = 0, start = 0, i = 0, len = 0, j = 0;
-	string *s = inString, newString = "";
-	vector<int> startLenVect, endLenVect, strLenVect;
-	vector<int> :: iterator itr1, itr2;
+	unsigned int end = 0, start = 0, i = 0, len = 0, j = 0;
+	char *inStr = inString, *s;
+	char newString[] = "";
+	vector<unsigned int> startLenVect, endLenVect, strLenVect;
+	vector<unsigned int> :: iterator itr1, itr2;
 	vector<string> stringVect;
 	vector<string> :: iterator itr3;
 
-	for(i = 0; i < s->length(); i++)
+	s = inStr;
+
+	// Add an extra space an the end of the string
+	for( i = 0; i < strlen(s); i++)
 	{
-		if(s[i] != " ")
+	}
+	s[i] = ' ';
+	i++;
+	s[i] = '\0';
+
+	//cout << "Debug line 18\n";
+	cout << s << endl;
+	cout << strlen(s) << endl;
+	// Create vectors for start and end indexes to split the words separated by a space
+	for( i = 0; i < strlen(s); i++)
+	{
+		if(s[i] != ' ')
 		{
 			end++;
 			len = end - start;
@@ -26,22 +41,42 @@ vector<string> convertStrgToStrVect(string *inString)
 			endLenVect.push_back(end);
 			startLenVect.push_back(start);
 			strLenVect.push_back(len);
-			end = i;
-			start = i;
+			end = i+1;
+			start = i+1;
 		}
 	}
-
-	for(itr1 = startLenVect.begin(), itr2 = endLenVect.begin; itr1 != startLenVect.end(); itr1++, itr2++)
+	cout << "startLenVect: ";
+	for(itr1 = startLenVect.begin(); itr1 != startLenVect.end(); itr1++)
 	{
+		cout << *itr1 << " ";
+	}
+
+	cout << "endLenVect: ";
+	for(itr1 = endLenVect.begin(); itr1 != endLenVect.end(); itr1++)
+	{
+		cout << *itr1 << " " << endl;
+	}
+
+	//cout << "Debug line 36\n";
+	for(itr1 = startLenVect.begin(), itr2 = endLenVect.begin(); itr1 != startLenVect.end(); itr1++, itr2++)
+	{
+		strcpy(newString, "");
+		//cout << "Debug line 41\n";
 		for(i = *itr1, j = 0; i < *itr2; i++, j++)
 		{
+			//cout << "Debug line 44\n";
 			newString[j] = s[i];
+			//cout << "newString[j]: " << newString[j] << endl;
 		}
-		newString[++j] = '\0';
+		//cout << "Debug line 47, j is: " << j << endl;
+		newString[j] = '\0';
+		//cout << "Debug line 49\n";
+		//cout << "newString[" << j << "]: " << newString << endl;
 		stringVect.push_back(newString);
 	}
 
-	for(itr3 = stringVect.begin(); itrs != stringVect.end(); itr3++)
+	//cout << "Debug line 54\n";
+	for(itr3 = stringVect.begin(); itr3 != stringVect.end(); itr3++)
 	{
 		cout << "stringVect: " << *itr3 << endl;
 	}
@@ -119,6 +154,8 @@ void main()
 	vector<int> excludStrCount;
 	vector<string> excludedWrds;
 	vector<string> outVect, outVect2;
+	char stringToConvertToVect[] = "This is earth";
+	string exampleStr;
 
 	//Create a vector of strings from an array of strings
 	vector<string> wrdsToExclud (begin(wordsExcluded), end(wordsExcluded));
@@ -202,12 +239,20 @@ void main()
 	}
 
 	// Another method?
-	sort(A.begin(),A.end());
+	/*sort(A.begin(),A.end());
 	A.erase(unique(A.begin(),A.end()),A.end());
 	for(int&x:A)
 	{
 		cout<<x<<" ";
-	}
+	}*/
+	cout << "1. Enter a string to convert to string of vectors: ";
+	//cin >> stringToConvertToVect;
+	cout << stringToConvertToVect << endl;
+	convertStrgToStrVect(stringToConvertToVect);
+
+	/*cout << "2. Enter a string to convert to string of vectors: ";
+	cin >> exampleStr;
+	cout << exampleStr << endl;*/
 
 	// Print the strings in the vector textStrings
 	/*for(itr1 = textStrings.begin(); itr1 != textStrings.end(); itr1++)

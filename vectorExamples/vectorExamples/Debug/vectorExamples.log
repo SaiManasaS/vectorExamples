@@ -1,0 +1,44 @@
+﻿Build started 4/29/2020 4:00:44 PM.
+     1>Project "C:\Users\Manasa\FaceRecog_OpenCV\vectorExamples\vectorExamples\vectorExamples.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(17): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(34): error C3867: 'std::vector<_Ty>::begin': function call missing argument list; use '&std::vector<_Ty>::begin' to create a pointer to member
+                 with
+                 [
+                     _Ty=int
+                 ]
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(34): error C2440: '=' : cannot convert from 'overloaded-function' to 'std::_Vector_iterator<_Myvec>'
+                 with
+                 [
+                     _Myvec=std::_Vector_val<std::_Simple_types<int>>
+                 ]
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(38): error C2440: '=' : cannot convert from 'std::string' to 'char'
+                 No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(44): error C2065: 'itrs' : undeclared identifier
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(205): error C2065: 'A' : undeclared identifier
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(205): error C2228: left of '.begin' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(205): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(205): error C2780: 'void std::sort(_RanIt,_RanIt,_Pr)' : expects 3 arguments - 2 provided
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\algorithm(3864) : see declaration of 'std::sort'
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(206): error C2065: 'A' : undeclared identifier
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(206): error C2228: left of '.erase' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(206): error C2228: left of '.begin' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(206): error C2228: left of '.end' must have class/struct/union
+                 type is ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(206): error C2780: '_FwdIt std::unique(_FwdIt,_FwdIt,_Pr)' : expects 3 arguments - 2 provided
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\algorithm(1858) : see declaration of 'std::unique'
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(207): error C2065: 'A' : undeclared identifier
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(208): error C3312: no callable 'begin' function found for type ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(208): error C3312: no callable 'end' function found for type ''unknown-type''
+     1>c:\users\manasa\facerecog_opencv\vectorexamples\vectorexamples\main.cpp(209): error C2065: 'x' : undeclared identifier
+     1>Done Building Project "C:\Users\Manasa\FaceRecog_OpenCV\vectorExamples\vectorExamples\vectorExamples.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.92
